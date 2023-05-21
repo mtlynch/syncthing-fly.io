@@ -1,8 +1,8 @@
-app = "synthing"
+app = "syncthing-i6dr06"
 primary_region = "ewr"
 
 [build]
-  image = "lscr.io/linuxserver/syncthing:1.23.4"
+  build-target = "deploy"
 
 [env]
   PUID = "1000"
@@ -12,8 +12,6 @@ primary_region = "ewr"
 [[services]]
   internal_port = 22000
   protocol = "tcp"
-  auto_stop_machines = true
-  auto_start_machines = true
 
   [[services.ports]]
     port = 22000
@@ -27,8 +25,6 @@ primary_region = "ewr"
 [[services]]
   internal_port = 22000
   protocol = "udp"
-  auto_stop_machines = true
-  auto_start_machines = true
 
   [[services.ports]]
     port = 22000
@@ -36,12 +32,10 @@ primary_region = "ewr"
 [[services]]
   internal_port = 21027
   protocol = "udp"
-  auto_stop_machines = true
-  auto_start_machines = true
 
   [[services.ports]]
     port = 21027
 
 [mounts]
-source="synthing_config"
-destination="/config"
+source="syncthing"
+destination="/var/syncthing"
