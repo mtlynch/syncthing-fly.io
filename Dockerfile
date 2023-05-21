@@ -17,7 +17,7 @@ FROM alpine:3.15 AS deploy
 RUN apk add --no-cache ca-certificates libcap su-exec tzdata
 
 COPY --from=builder /src/syncthing /bin/syncthing
-COPY ./docker-entrypoint.sh /bin/entrypoint.sh
+COPY --from=builder /src/script/docker-entrypoint.sh /bin/entrypoint.sh
 
 RUN chmod 755 /bin/entrypoint.sh
 
