@@ -2,7 +2,7 @@ app = "syncthing-i6dr06"
 primary_region = "ewr"
 
 [build]
-  build-target = "deploy"
+  image = "mtlynch/synchthing:1.23.4"
 
 [env]
   PUID = "1000"
