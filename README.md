@@ -36,7 +36,8 @@ SIZE_IN_GB=3
 
 fly volumes create "${VOLUME_NAME}" \
   --region "${REGION}" \
-  --size "${SIZE_IN_GB}"
+  --size "${SIZE_IN_GB}" \
+  --yes
 ```
 
 ## Deploy
@@ -58,8 +59,8 @@ fly ssh console
 Use socat to proxy IPv4 to IPv6:
 
 ```bash
-apk add socat
-socat TCP6-LISTEN:8386,fork,su=nobody TCP4:localhost:8384
+apk add socat && \
+  socat TCP6-LISTEN:8386,fork,su=nobody TCP4:localhost:8384
 ```
 
 Open a fly proxy to 8386:
