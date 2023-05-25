@@ -5,7 +5,6 @@ primary_region = "ewr"
   image = "syncthing/syncthing:1.23.4"
 
 [env]
-  TZ = "Etc/UTC"
   # Only listen for connections to admin GUI through localhost.
   STGUIADDRESS = ""
 
