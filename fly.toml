@@ -1,4 +1,4 @@
-app = "syncthing-i6dr06"
+app = "syncfly"
 primary_region = "ewr"
 
 [build]
@@ -6,7 +6,11 @@ primary_region = "ewr"
 
 [env]
   # Only listen for connections to admin GUI through localhost.
-  STGUIADDRESS = ""
+  STGUIADDRESS = "[::1]:8384"
+
+[mounts]
+  source="syncthing_data"
+  destination="/var/syncthing"
 
 [[services]]
   internal_port = 22000
@@ -34,7 +38,3 @@ primary_region = "ewr"
 
   [[services.ports]]
     port = 21027
-
-[mounts]
-source="syncthing"
-destination="/var/syncthing"

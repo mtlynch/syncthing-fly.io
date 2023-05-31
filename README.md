@@ -28,7 +28,7 @@ APP_NAME="syncthing-${RANDOM_SUFFIX}"
 fly apps create --name "${APP_NAME}"
 ```
 
-## Create a persistent config volume
+## Create a persistent volume
 
 ```bash
 VOLUME_NAME="syncthing" # Must match fly.toml.
