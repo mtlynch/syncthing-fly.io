@@ -50,25 +50,13 @@ fly deploy
 
 ## Access web UI
 
-Open fly console:
-
-```bash
-fly ssh console
-```
-
-Use socat to proxy IPv4 to IPv6:
-
-```bash
-apk add socat && \
-  socat TCP6-LISTEN:8386,fork,su=nobody TCP4:localhost:8384
-```
 
 Open a fly proxy to 8386:
 
 ```bash
-fly proxy 8384:8386
+fly proxy 8388:8384
 ```
 
 Open web UI:
 
-<http://localhost:8384>
+<http://localhost:8388>
