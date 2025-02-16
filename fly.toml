@@ -2,7 +2,7 @@ app = "syncfly"
 primary_region = "ewr"
 
 [build]
-  image = "syncthing/syncthing:1.28.1"
+  image = "syncthing/syncthing:1.29.2"
 
 [env]
   # Only listen for connections to admin GUI through private Wireguard network.
